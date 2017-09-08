@@ -1,4 +1,4 @@
-FROM node:7.10.1
+FROM node:8.4.0
 
 
 RUN apt-get -y update && \
@@ -11,4 +11,4 @@ ENV IONIC_VERSION=3.9.2
 # install ionic
 RUN npm install -g ionic@"$IONIC_VERSION" && npm install -g @ionic/app-scripts@latest \
     ionic config --no-interactive set -g daemon.updates false && \
-    npm cache clear
+    npm cache clear --force
